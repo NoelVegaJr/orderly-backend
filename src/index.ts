@@ -21,7 +21,7 @@ const { PORT = 4005, APP_URL } = process.env;
 
 async function main() {
   const app = express();
-  app.use('/graphql', cors(), json());
+  app.use(cors(), json());
   const httpServer = http.createServer(app);
 
   const corsOptions = {
