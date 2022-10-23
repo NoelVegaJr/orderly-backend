@@ -93,7 +93,7 @@ async function main() {
     ],
   });
   await server.start();
-  server.applyMiddleware({ app, cors: corsOptions, path: '/graphql' });
+  server.applyMiddleware({ app, path: '/graphql' });
   // await new Promise<void>((resolve) =>
   //   httpServer.listen({ port: PORT }, resolve)
   // );
