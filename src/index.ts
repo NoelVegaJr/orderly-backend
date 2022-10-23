@@ -21,9 +21,9 @@ const { PORT = 4005, APP_URL } = process.env;
 const app = express();
 
 console.log({ APP_URL });
+app.use(cors());
 
 async function main() {
-  //app.use(cors(), json());
   const httpServer = http.createServer(app);
 
   app.get('/', (req, res) => res.send({ success: true }));
