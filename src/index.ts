@@ -47,6 +47,7 @@ async function main() {
     // ctx is the graphql-ws Context where connectionParams live
     if (ctx.connectionParams && ctx.connectionParams.session) {
       const { session } = ctx.connectionParams;
+      console.log(session);
       console.log('IN CONTEXT BUILDER');
       return { session, prisma, pubsub };
     }
@@ -84,6 +85,8 @@ async function main() {
     cache: 'bounded',
     context: async ({ req }): Promise<GraphQLContext> => {
       const session = (await getSession({ req })) as Session;
+      console.log(req);
+      console.log(session);
       return { session, prisma, pubsub };
     },
     plugins: [
