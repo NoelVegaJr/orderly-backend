@@ -21,7 +21,7 @@ const { PORT = 4005, APP_URL } = process.env;
 const app = express();
 
 async function main() {
-  app.use(cors(), json());
+  //app.use(cors(), json());
   const httpServer = http.createServer(app);
 
   app.get('/', (req, res) => res.send({ success: true }));
@@ -98,7 +98,7 @@ async function main() {
     ],
   });
   await server.start();
-  server.applyMiddleware({ app, path: '/graphql' });
+  server.applyMiddleware({ app, cors: corsOptions, path: '/graphql' });
   // await new Promise<void>((resolve) =>
   //   httpServer.listen({ port: PORT }, resolve)
   // );
