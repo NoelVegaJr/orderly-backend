@@ -20,6 +20,8 @@ import { json } from 'body-parser';
 const { PORT = 4005, APP_URL } = process.env;
 const app = express();
 
+console.log({ APP_URL });
+
 async function main() {
   //app.use(cors(), json());
   const httpServer = http.createServer(app);
