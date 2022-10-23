@@ -26,6 +26,8 @@ async function main() {
 
   app.get('/', (req, res) => res.send({ ok: true }));
 
+  app.get('/test', (req, res) => res.send({ ok: true }));
+
   const corsOptions = {
     origin: APP_URL,
     credentials: true,
