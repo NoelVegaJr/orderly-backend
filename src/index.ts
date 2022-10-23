@@ -31,7 +31,7 @@ async function main() {
   app.get('/test', (req, res) => res.send({ success: true }));
 
   const corsOptions = {
-    origin: '*',
+    origin: APP_URL,
     credentials: true,
   };
 
