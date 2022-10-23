@@ -16,11 +16,12 @@ import { PrismaClient } from '@prisma/client';
 import { Session } from './types/types';
 import { PubSub } from 'graphql-subscriptions';
 import cors from 'cors';
+import { json } from 'body-parser';
 const { PORT = 4005, APP_URL } = process.env;
 
 async function main() {
   const app = express();
-  app.use(cors({ origin: [APP_URL as string] }));
+  app.use('/graphql', cors({ origin: [APP_URL as string] }), json());
   const httpServer = http.createServer(app);
 
   const corsOptions = {
