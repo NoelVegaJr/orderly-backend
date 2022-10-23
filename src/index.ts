@@ -18,9 +18,9 @@ import { PubSub } from 'graphql-subscriptions';
 import cors from 'cors';
 import { json } from 'body-parser';
 const { PORT = 4005, APP_URL } = process.env;
+const app = express();
 
 async function main() {
-  const app = express();
   app.use(cors(), json());
   const httpServer = http.createServer(app);
 
@@ -114,3 +114,5 @@ async function main() {
 }
 
 main().catch((error) => console.log(error));
+
+export default app;
