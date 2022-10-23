@@ -17,6 +17,8 @@ import { Session } from './types/types';
 import { PubSub } from 'graphql-subscriptions';
 const { PORT = 4005, APP_URL } = process.env;
 
+console.log({ APP_URL });
+
 async function main() {
   const app = express();
   const httpServer = http.createServer(app);
