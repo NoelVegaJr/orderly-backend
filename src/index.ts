@@ -47,7 +47,7 @@ async function main() {
     // ctx is the graphql-ws Context where connectionParams live
     if (ctx.connectionParams && ctx.connectionParams.session) {
       const { session } = ctx.connectionParams;
-      console.log(session);
+      console.log('SESSION: session');
       console.log('IN CONTEXT BUILDER');
       return { session, prisma, pubsub };
     }
