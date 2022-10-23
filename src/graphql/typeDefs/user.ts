@@ -17,7 +17,7 @@ export const userTypeDef = gql`
   }
 
   type Mutation {
-    createUsername(username: String): CreateUsernameResponse!
+    createUsername(username: String, id: ID!): CreateUsernameResponse!
     createNewMessage(text: String): String
   }
 

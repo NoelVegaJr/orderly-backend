@@ -47,18 +47,17 @@ export const userResolvers = {
   Mutation: {
     createUsername: async (
       _: any,
-      args: { username: string },
+      args: { username: string; id: string },
       ctx: GraphQLContext
     ): Promise<CreateUsernameResponse> => {
       console.log('hello');
-      const { username } = args;
+      const { username, id } = args;
       const { session, prisma } = ctx;
-      console.log(session);
+
+      /*console.log(session);
       if (!session?.user) {
         return { error: 'Not authorized' };
-      }
-
-      const { id } = session.user;
+      }*/
 
       try {
         const existingUsername = await prisma.user.findFirst({
