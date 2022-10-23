@@ -19,7 +19,7 @@ import cors from 'cors';
 import { json } from 'body-parser';
 const { PORT = 4005, APP_URL } = process.env;
 const app = express();
-
+app.options('*', cors());
 console.log({ APP_URL });
 app.use(cors());
 
