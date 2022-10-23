@@ -19,9 +19,9 @@ import cors from 'cors';
 import { json } from 'body-parser';
 const { PORT = 4005, APP_URL } = process.env;
 const app = express();
-app.options('*', cors());
+//app.options('*', cors());
 console.log({ APP_URL });
-app.use(cors());
+//app.use(cors());
 
 async function main() {
   const httpServer = http.createServer(app);
@@ -31,7 +31,7 @@ async function main() {
   app.get('/test', (req, res) => res.send({ success: true }));
 
   const corsOptions = {
-    origin: APP_URL,
+    origin: true,
     credentials: true,
   };
 
