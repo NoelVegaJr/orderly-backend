@@ -24,6 +24,8 @@ async function main() {
   app.use(cors(), json());
   const httpServer = http.createServer(app);
 
+  app.get('/', (req, res) => res.send({ ok: true }));
+
   const corsOptions = {
     origin: APP_URL,
     credentials: true,
